@@ -11,6 +11,7 @@
 .mtj.tmp/
 **/logs
 **/target
+**/Servers
 # Package Files #
 *.jar
 *.war
