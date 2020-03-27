@@ -12,6 +12,7 @@
 **/logs
 **/target
 **/Servers
+#
 # Package Files #
 *.jar
 *.war
