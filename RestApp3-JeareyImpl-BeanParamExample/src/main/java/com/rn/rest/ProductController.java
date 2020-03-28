@@ -13,8 +13,8 @@ import javax.ws.rs.core.Response;
 public class ProductController {
     @POST
     @Path("/register")
-   // @Consumes({MediaType.APPLICATION_FORM_URLENCODED})
-    @Consumes(MediaType.APPLICATION_XML)
+    @Consumes({MediaType.APPLICATION_FORM_URLENCODED})
+   // @Consumes(MediaType.APPLICATION_XML)
     public Response registerForm(@BeanParam Products products){
         System.out.println("Inside register form");
         return Response.ok(products.toString()).build();

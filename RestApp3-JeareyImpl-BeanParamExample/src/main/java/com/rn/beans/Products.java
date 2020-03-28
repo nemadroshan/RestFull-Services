@@ -14,13 +14,23 @@ public class Products {
     private String pid;
     @XmlElement
     @FormParam("pname")
-    private String pName;
+    private String pname;
     @FormParam("mrfDate")
     @XmlElement
     private String mrfDate;
     @FormParam("expDate")
     @XmlElement
     private String expDate;
+
+    @Override
+    public String toString() {
+        return "Products{" +
+                "pid='" + pid + '\'' +
+                ", pname='" + pname + '\'' +
+                ", mrfDate='" + mrfDate + '\'' +
+                ", expDate='" + expDate + '\'' +
+                '}';
+    }
 
     public String getPid() {
         return pid;
@@ -30,12 +40,12 @@ public class Products {
         this.pid = pid;
     }
 
-    public String getpName() {
-        return pName;
+    public String getPname() {
+        return pname;
     }
 
-    public void setpName(String pName) {
-        this.pName = pName;
+    public void setPname(String pname) {
+        this.pname = pname;
     }
 
     public String getMrfDate() {
@@ -50,19 +60,7 @@ public class Products {
         return expDate;
     }
 
-    @Override
-    public String toString() {
-        return "Products{" +
-                "pid=" + pid +
-                ", pName='" + pName + '\'' +
-                ", mrfDate='" + mrfDate + '\'' +
-                ", expDate='" + expDate + '\'' +
-                '}';
-    }
-
     public void setExpDate(String expDate) {
         this.expDate = expDate;
     }
-
-
 }
