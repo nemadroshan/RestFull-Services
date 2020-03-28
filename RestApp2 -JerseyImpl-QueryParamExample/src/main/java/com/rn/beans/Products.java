@@ -17,6 +17,16 @@ public class Products {
     @XmlElement
     private String productExpDate;
 
+    @Override
+    public String toString() {
+        return "Products{" +
+                "productId=" + productId +
+                ", productName='" + productName + '\'' +
+                ", productMrfDate='" + productMrfDate + '\'' +
+                ", productExpDate='" + productExpDate + '\'' +
+                '}';
+    }
+
     public int getProductId() {
         return productId;
     }

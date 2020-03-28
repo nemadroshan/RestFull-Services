@@ -83,9 +83,4 @@ public class MyController {
 
         return Response.status(200).entity(result).build();
     }
-
-    /*the formparam method is problem beacause if form with the 10 filed then
-     we have to write 10 time @form param annotation for each fields
-     to overcome this we have @BeanParam anotation
-    */
 }
