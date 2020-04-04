@@ -1,10 +1,15 @@
 package com.micropo.responseDto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.io.Serializable;
 
 public class ResponseDTO implements Serializable {
+    @JsonProperty
     private  byte status;
+    @JsonProperty
     private  String message;
+    @JsonProperty
     private String data;
 
     public ResponseDTO() {

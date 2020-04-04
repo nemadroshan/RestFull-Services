@@ -1,13 +1,16 @@
 package com.micropo.model;
 
-import com.sun.org.apache.xpath.internal.SourceTreeManager;
-
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.Serializable;
 
 public class Book  implements Serializable {
+    @JsonProperty
     private String isbn;
+    @JsonProperty
     private String title;
+    @JsonProperty
     private String author;
+    @JsonProperty
     private Double price;
 
     public Book(){
