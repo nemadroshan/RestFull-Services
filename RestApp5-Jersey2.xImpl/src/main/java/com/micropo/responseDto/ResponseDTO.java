@@ -11,11 +11,6 @@ public class ResponseDTO implements Serializable {
     private  String message;
     @JsonProperty
     private String data;
-
-    public ResponseDTO() {
-        System.out.println("Response DTO : zero Param constructor");
-    }
-
     public byte getStatus() {
         return status;
     }
