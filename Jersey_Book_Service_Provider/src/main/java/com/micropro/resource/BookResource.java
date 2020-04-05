@@ -1,10 +1,8 @@
 package com.micropro.resource;
-
 import com.micropo.jsonUtil.JsonUtils;
 import com.micropo.model.Book;
 import com.micropo.responseDto.ResponseDTO;
 import com.micropro.factory.DaoFactory;
-
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -25,6 +23,7 @@ public class BookResource {
         if(jsonBook !=null){
             book = JsonUtils.convertJsonToJava(jsonBook,Book.class);
             int count = DaoFactory.getDao().registerBook(book);
+            System.out.println( "Count : "+count);
             if(count>0){
                 responseDTO.setMessage("Book Savaed SuccessFully");
                 responseDTO.setData(book.toString());
