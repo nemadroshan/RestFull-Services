@@ -7,9 +7,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 @RestController
 public class UserRestController {
-    private UserService service = new UserServiceImpl();
+    @Autowired
+    private UserService service ;
+    //= new UserServiceImpl();
 
     /*public void setService(UserService service) {
         System.out.println("service is injected");
@@ -48,14 +54,29 @@ public class UserRestController {
         }
     }
 
-@RequestMapping(value = "/delete",method = RequestMethod.DELETE)
-    public @ResponseBody String delete(@RequestParam(name = "uid") String uid){
-        boolean isDelete =false;
+    @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
+    public @ResponseBody
+    String delete(@RequestParam(name = "uid") String uid) {
+        boolean isDelete = false;
         isDelete = service.delete(uid);
-        if(isDelete){
+        if (isDelete) {
             return "User Deleted Succeessfully";
-        }else {
+        } else {
             return "Failed to delete User";
         }
+    }
+
+    @RequestMapping(value = "/show", produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.GET
+    )
+    public @ResponseBody
+    List showMap() {
+        List list = new ArrayList();
+        Map map = service.getUserMap();
+        for (Object u : map.values()) {
+            User user = (User) u;
+            list.add(user);
+        }
+        System.out.println("List :: " + list);
+        return list;
     }
 }
